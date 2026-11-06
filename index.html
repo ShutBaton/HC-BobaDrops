@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    user-select: none;
+    height: 100vh;
+    background: url('assets/wallpaper.jpg') center/cover;
+    overflow: hidden;
+  }
+
+  .window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title-bar {
+    height: 32px;
+    background: rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+    font-size: 12px;
+  }
+
+  .window-controls {
+    display: flex;
+    height: 100%;
+  }
+
+  .win-btn {
+    width: 46px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+  }
+
+  .win-btn:hover {
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  .win-btn.close:hover {
+    background: #e81123;
+    color: #fff;
+  }
+
+  textarea {
+    flex: 1;
+    background: transparent;
+    border: none;
+    resize: none;
+    font-family: monospace;
+    font-size: 13px;
+    padding: 12px;
+    outline: none;
+    user-select: text;
+  }
+
+  .taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 48px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: rgba(243, 243, 243, 0.75);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .taskbar-left {
+    padding-left: 12px;
+  }
+
+  .taskbar-centre {
+    justify-self: center;
+    display: flex;
+    gap: 4px;
+  }
+
+  .taskbar-right {
+    justify-self: end;
+    padding-right: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .taskbar-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+
+  .taskbar-icon:hover {
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  .tray-icon {
+    width: 24px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tray-time {
+    padding-left: 4px;
+    line-height: 1.2;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .tray-icon img {
+    width: 16px;
+    height: 16px;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="window">
+    <div class="title-bar">
+      <span>Notepad - Static Document</span>
+      <div class="window-controls">
+        <!-- these are a PAIN, swap for svg? -->
+        <div class="win-btn">smol</div>
+        <div class="win-btn">big</div>
+        <div class="win-btn close">bye</div>
+      </div>
+    </div>
+    <textarea placeholder="Type plaintext here...">Hi!&#13;&#10;&#13;&#10;Why are you even here??&#13;&#10;&#13;&#10;This isn't windows.&#13;&#10;&#13;&#10;We don't have the budget for that. You can edit this text by the way.</textarea>
+  </div>
+
+  <div class="taskbar">
+    <div class="taskbar-left">
+      <div class="taskbar-icon"><img src="assets/widgets.ico"></div>
+    </div>
+    
+    <div class="taskbar-centre">
+      <!-- i really should figure out if theres a better way to do this -->
+      <div class="taskbar-icon"><img src="assets/start.ico"></div>
+      <div class="taskbar-icon"><img src="assets/search.ico"></div>
+      <div class="taskbar-icon"><img src="assets/taskview.ico"></div>
+      <div class="taskbar-icon"><img src="assets/explorer.ico"></div>
+      <div class="taskbar-icon"><img src="assets/edge.ico"></div>
+      <div class="taskbar-icon"><img src="assets/terminal.ico"></div>
+      <div class="taskbar-icon"><img src="assets/word.ico"></div>
+      <div class="taskbar-icon"><img src="assets/excel.ico"></div>
+      <div class="taskbar-icon"><img src="assets/powerpoint.ico"></div>
+      <div class="taskbar-icon"><img src="assets/onenote.ico"></div>
+      <div class="taskbar-icon"><img src="assets/visualcode.ico"></div>
+    </div>
+
+    <div class="taskbar-right">
+      <div class="tray-icon"><img src="assets/chevron.ico"></div>
+      <div class="tray-icon"><img src="assets/cloudshadow.ico"></div>
+      <div class="tray-icon"><img src="assets/wifi.ico"></div>
+      <div class="tray-icon"><img src="assets/battery.ico"></div>
+      
+      <div class="tray-time">
+        <div>11/12/2026</div>
+        <div>17:32</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
